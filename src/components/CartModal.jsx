@@ -1,0 +1,99 @@
+import React from 'react';
+import { X, Trash2 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
+const CartModal = ({ isOpen, onClose, cartItems, onRemoveItem }) => {
+    const navigate = useNavigate();
+
+    if (!isOpen) return null;
+
+    const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+
+    const handleCheckout = () => {
+        onClose();
+        navigate('/checkout');
+    };
+
+    return (
+        <div style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 1000,
+            display: 'flex',
+            justifyContent: 'flex-end',
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            backdropFilter: 'blur(2px)'
+        }}>
+            <div
+                className="animate-slide-in"
+                style={{
+                    width: '100%',
+                    maxWidth: '500px',
+                    height: '100%',
+                    backgroundColor: 'white',
+                    padding: '2rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    boxShadow: '-10px 0 30px rgba(0,0,0,0.1)'
+                }}
+            >
+                <div className="flex justify-between items-center" style={{ marginBottom: '2rem' }}>
+                    <h2 style={{ margin: 0, fontSize: '1.5rem' }}>Votre Panier ({cartItems.length})</h2>
+                    <button onClick={onClose} className="cart-modal-close"><X size={24} /></button>
+                </div>
+
+                <div style={{ flex: 1, overflowY: 'auto' }}>
+                    {cartItems.length === 0 ? (
+                        <p style={{ textAlign: 'center', color: '#888', marginTop: '4rem' }}>Votre panier est vide.</p>
+                    ) : (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                            {cartItems.map((item, index) => (
+                                <div key={`${item.id}-${index}`} style={{ display: 'flex', gap: '1rem', borderBottom: '1px solid #eee', paddingBottom: '1.5rem' }}>
+                                    <div style={{ width: '100px', height: '100px', backgroundColor: '#f9f9f9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <img src={item.image} alt={item.name} style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }} />
+                                    </div>
+                                    <div style={{ flex: 1 }}>
+                                        <h3 style={{ fontSize: '1rem', margin: '0 0 0.5rem 0' }}>{item.name}</h3>
+                                        <p style={{ fontSize: '0.9rem', color: '#666', margin: 0 }}>{item.name}</p> {/* This was redundant in English too, but let's fix it to show color name if available or just remove */}
+                                        <p style={{ fontSize: '1rem', fontWeight: 'bold', marginTop: '0.5rem' }}>{item.price.toLocaleString()}€</p>
+                                    </div>
+                                    <button onClick={() => onRemoveItem(index)} style={{ color: '#999' }}>
+                                        <Trash2 size={18} />
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <div style={{ borderTop: '1px solid #eee', paddingTop: '2rem', marginTop: 'auto' }}>
+                    <div className="flex justify-between items-center" style={{ marginBottom: '1.5rem' }}>
+                        <span style={{ fontSize: '1.2rem' }}>Total</span>
+                        <span style={{ fontSize: '1.5rem', fontFamily: 'var(--font-heading)' }}>{total.toLocaleString()}€</span>
+                    </div>
+                    <button
+                        className="btn-primary"
+                        style={{ width: '100%' }}
+                        disabled={cartItems.length === 0}
+                        onClick={handleCheckout}
+                    >
+                        Passer la commande
+                    </button>
+                </div>
+            </div>
+
+            <style>{`
+                @media (max-width: 768px) {
+                    .cart-modal-close {
+                        position: static !important;
+                    }
+                }
+            `}</style>
+        </div>
+    );
+};
+
+export default CartModal;
