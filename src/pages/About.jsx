@@ -28,7 +28,7 @@ const About = () => {
                 </div>
             </div>
 
-            <div style={{ backgroundColor: '#f9f9f9', padding: '4rem', borderRadius: '8px', textAlign: 'center', marginBottom: '6rem' }}>
+            <div style={{ backgroundColor: '#f9f9f9', borderRadius: '8px', textAlign: 'center', marginBottom: '6rem' }}>
                 <h2 style={{ fontSize: '2rem', marginBottom: '2rem', fontFamily: 'var(--font-heading)' }}>Nos Valeurs</h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '3rem' }} className="values-grid">
                     <div>

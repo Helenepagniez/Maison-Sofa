@@ -162,9 +162,6 @@ const Navbar = ({ cartCount, onOpenCart }) => {
                         display: flex !important;
                         align-items: center;
                     }
-                    .container h1 {
-                        font-size: 1.2rem !important;
-                    }
                     .container.flex {
                         display: flex !important;
                         flex-direction: row !important;

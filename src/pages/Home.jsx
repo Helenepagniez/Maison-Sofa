@@ -154,7 +154,7 @@ const Home = () => {
                                 <div className="flex justify-between items-start">
                                     <div>
                                         <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--color-accent)' }}>{product.name}</h3>
-                                        <p style={{ color: '#666', fontSize: '0.9rem' }}>{product.colors.length} Finitions</p>
+                                        <p style={{ color: '#666', fontSize: '0.9rem' }}>{product.colors.length} Coloris disponibles</p>
                                     </div>
                                     <span style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>
                                         {product.price.toLocaleString()}€

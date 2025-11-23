@@ -28,11 +28,11 @@ const Checkout = ({ cartItems, clearCart }) => {
 
     return (
         <div className="container" style={{ padding: '4rem 0' }}>
-            <h1 style={{ textAlign: 'center', marginBottom: '4rem' }}>Paiement</h1>
+            <h1 style={{ textAlign: 'center', marginBottom: '4rem', color: 'var(--color-accent)' }}>Paiement</h1>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '4rem' }}>
+            <div className="checkout-grid">
                 <form onSubmit={handleSubmit}>
-                    <h3 style={{ borderBottom: '1px solid #eee', paddingBottom: '1rem', marginBottom: '2rem' }}>Informations de Livraison</h3>
+                    <h3 style={{ borderBottom: '1px solid #eee', paddingBottom: '1rem', marginBottom: '2rem', color: 'var(--color-accent)' }}>Informations de Livraison</h3>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
                         <div>
@@ -70,7 +70,7 @@ const Checkout = ({ cartItems, clearCart }) => {
                         </div>
                     </div>
 
-                    <h3 style={{ borderBottom: '1px solid #eee', paddingBottom: '1rem', marginBottom: '2rem' }}>Détails du Paiement</h3>
+                    <h3 style={{ borderBottom: '1px solid #eee', paddingBottom: '1rem', marginBottom: '2rem', color: 'var(--color-accent)' }}>Détails du Paiement</h3>
 
                     <div style={{ marginBottom: '1.5rem' }}>
                         <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem' }}>Numéro de Carte</label>
@@ -99,7 +99,7 @@ const Checkout = ({ cartItems, clearCart }) => {
                 </form>
 
                 <div style={{ backgroundColor: '#f9f9f9', padding: '2rem', height: 'fit-content' }}>
-                    <h3 style={{ marginBottom: '1.5rem' }}>Résumé de la commande</h3>
+                    <h3 style={{ marginBottom: '1.5rem', color: 'var(--color-accent)' }}>Résumé de la commande</h3>
                     {cartItems.map((item, index) => (
                         <div key={index} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
                             <span>{item.name}</span>
