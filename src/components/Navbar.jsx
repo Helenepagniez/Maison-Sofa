@@ -33,19 +33,19 @@ const Navbar = ({ cartCount, onOpenCart }) => {
 
                     {/* Desktop Navigation */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '3rem' }} className="desktop-nav">
-                        <Link to="/about" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', minWidth: '80px' }}>
+                        <Link to="/about" className="nav-item-hover" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', minWidth: '80px' }}>
                             <div style={{ width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <Info size={24} color="var(--color-accent)" />
                             </div>
                             <span style={{ color: 'var(--color-accent)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1px', whiteSpace: 'nowrap' }}>À Propos</span>
                         </Link>
-                        <Link to="/contact" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', minWidth: '80px' }}>
+                        <Link to="/contact" className="nav-item-hover" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', minWidth: '80px' }}>
                             <div style={{ width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                             </div>
                             <span style={{ color: 'var(--color-accent)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1px', whiteSpace: 'nowrap' }}>Contact</span>
                         </Link>
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', minWidth: '80px' }} onClick={onOpenCart}>
+                        <div className="nav-item-hover" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', minWidth: '80px' }} onClick={onOpenCart}>
                             <div style={{ position: 'relative', width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <ShoppingBag size={24} color="var(--color-accent)" />
                                 {cartCount > 0 && (
@@ -154,6 +154,17 @@ const Navbar = ({ cartCount, onOpenCart }) => {
             )}
 
             <style>{`
+                .nav-item-hover {
+                    transition: transform 0.3s ease, color 0.3s ease;
+                }
+                .nav-item-hover:hover {
+                    transform: scale(1.1);
+                    color: var(--color-primary) !important;
+                }
+                .nav-item-hover:hover svg {
+                    stroke: var(--color-primary) !important;
+                    color: var(--color-primary) !important;
+                }
                 @media (max-width: 768px) {
                     .desktop-nav {
                         display: none !important;

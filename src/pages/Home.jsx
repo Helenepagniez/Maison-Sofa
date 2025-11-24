@@ -47,19 +47,7 @@ const Home = () => {
                                 <button
                                     key={category}
                                     onClick={() => setSelectedCategory(category)}
-                                    style={{
-                                        padding: '0.8rem 1.5rem',
-                                        borderRadius: '30px',
-                                        border: selectedCategory === category ? 'none' : '1px solid #ddd',
-                                        backgroundColor: selectedCategory === category ? 'var(--color-accent)' : 'transparent',
-                                        color: selectedCategory === category ? 'white' : '#666',
-                                        cursor: 'pointer',
-                                        whiteSpace: 'nowrap',
-                                        transition: 'all 0.3s',
-                                        fontSize: '0.9rem',
-                                        fontWeight: selectedCategory === category ? 'bold' : 'normal',
-                                        boxShadow: selectedCategory === category ? '0 4px 10px rgba(197, 160, 89, 0.3)' : 'none'
-                                    }}
+                                    className={`filter-btn ${selectedCategory === category ? 'selected' : ''}`}
                                 >
                                     {category}
                                 </button>
@@ -214,6 +202,35 @@ const Home = () => {
                     <p style={{ fontSize: '0.9rem', color: 'white', lineHeight: '1.6' }}>Une équipe dédiée à votre écoute 7j/7 pour vous accompagner dans votre projet.</p>
                 </div>
             </div>
+            <style>{`
+                .filter-btn {
+                    padding: 0.8rem 1.5rem;
+                    border-radius: 30px;
+                    border: 1px solid #ddd;
+                    background-color: transparent;
+                    color: #666;
+                    cursor: pointer;
+                    white-space: nowrap;
+                    transition: all 0.3s ease;
+                    font-size: 0.9rem;
+                    font-weight: normal;
+                }
+                .filter-btn:hover {
+                    border-color: var(--color-accent);
+                    color: var(--color-accent);
+                }
+                .filter-btn.selected {
+                    border-color: var(--color-accent);
+                    background-color: var(--color-accent);
+                    color: white;
+                    font-weight: bold;
+                    box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
+                }
+                .filter-btn.selected:hover {
+                    color: white;
+                    background-color: var(--color-accent);
+                }
+            `}</style>
         </div >
     );
 };

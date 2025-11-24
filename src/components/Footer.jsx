@@ -56,15 +56,15 @@ const Footer = () => {
             </div>
 
             <div className="container" style={{ borderTop: '1px solid #333', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-                <p style={{ color: '#666', fontSize: '0.8rem' }}>&copy; 2025 Maison Sofa. Tous droits réservés.</p>
+                <p style={{ color: '#ffffffff', fontSize: '0.8rem' }}>&copy; 2025 Maison Sofa. Tous droits réservés.</p>
                 <div style={{ display: 'flex', gap: '1.5rem' }}>
-                    <a href="#" style={{ color: '#666', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>
+                    <a href="#" style={{ color: '#ffffffff', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>
                         <Facebook size={20} />
                     </a>
-                    <a href="#" style={{ color: '#666', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>
+                    <a href="#" style={{ color: '#ffffffff', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>
                         <Instagram size={20} />
                     </a>
-                    <a href="#" style={{ color: '#666', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>
+                    <a href="#" style={{ color: '#ffffffff', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>
                         <Twitter size={20} />
                     </a>
                 </div>
