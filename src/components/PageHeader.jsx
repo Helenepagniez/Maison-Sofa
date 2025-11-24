@@ -8,8 +8,8 @@ const PageHeader = () => {
     const navigate = useNavigate();
     const pathnames = location.pathname.split('/').filter((x) => x);
 
-    // Don't show on home page
-    if (location.pathname === '/') {
+    // Don't show on home page or checkout page (quarantine mode)
+    if (location.pathname === '/' || location.pathname === '/checkout') {
         return null;
     }
 

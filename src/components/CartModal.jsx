@@ -2,7 +2,7 @@ import React from 'react';
 import { X, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const CartModal = ({ isOpen, onClose, cartItems, onRemove, onUpdateQuantity }) => {
+const CartModal = ({ isOpen, onClose, cartItems, onRemove, onUpdateQuantity, onUpdateColor, products }) => {
     const navigate = useNavigate();
 
     if (!isOpen) return null;
@@ -57,7 +57,33 @@ const CartModal = ({ isOpen, onClose, cartItems, onRemove, onUpdateQuantity }) =
                                     </div>
                                     <div style={{ flex: 1 }}>
                                         <h3 style={{ fontSize: '1rem', margin: '0 0 0.5rem 0' }}>{item.name}</h3>
-                                        <p style={{ fontSize: '0.9rem', color: '#666', margin: 0 }}>Coloris : {item.selectedColor?.name || 'Standard'}</p>
+
+                                        <div style={{ marginBottom: '0.5rem' }}>
+                                            <select
+                                                value={item.selectedColor?.id}
+                                                onChange={(e) => {
+                                                    const newColorId = e.target.value;
+                                                    if (newColorId !== item.selectedColor?.id) {
+                                                        onUpdateColor(item.id, item.selectedColor?.id, newColorId);
+                                                    }
+                                                }}
+                                                style={{
+                                                    padding: '0.1rem 0.5rem',
+                                                    borderRadius: '4px',
+                                                    border: '1px solid #ddd',
+                                                    fontSize: '0.8rem',
+                                                    color: '#555',
+                                                    cursor: 'pointer',
+                                                    maxWidth: '100%'
+                                                }}
+                                            >
+                                                {products.find(p => p.id === item.id.split('-col-')[0])?.colors.map(color => (
+                                                    <option key={color.id} value={color.id}>
+                                                        {color.name}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                        </div>
 
                                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '0.5rem' }}>
                                             <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #ddd', borderRadius: '4px' }}>
@@ -80,9 +106,9 @@ const CartModal = ({ isOpen, onClose, cartItems, onRemove, onUpdateQuantity }) =
                                     </button>
                                 </div>
                             ))}
-                        </div>
+                        </div >
                     )}
-                </div>
+                </div >
 
                 <div style={{ borderTop: '1px solid #eee', paddingTop: '2rem', marginTop: 'auto' }}>
                     <div className="flex justify-between items-center" style={{ marginBottom: '1.5rem' }}>
@@ -98,7 +124,7 @@ const CartModal = ({ isOpen, onClose, cartItems, onRemove, onUpdateQuantity }) =
                         Voir mon panier
                     </button>
                 </div>
-            </div>
+            </div >
 
             <style>{`
                 @media (max-width: 768px) {
@@ -107,7 +133,7 @@ const CartModal = ({ isOpen, onClose, cartItems, onRemove, onUpdateQuantity }) =
                     }
                 }
             `}</style>
-        </div>
+        </div >
     );
 };
 

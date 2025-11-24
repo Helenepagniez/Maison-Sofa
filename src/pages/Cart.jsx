@@ -2,7 +2,7 @@ import React from 'react';
 import { Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const Cart = ({ cartItems, onRemove, onUpdateQuantity }) => {
+const Cart = ({ cartItems, onRemove, onUpdateQuantity, onUpdateColor, products }) => {
     const navigate = useNavigate();
     const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
@@ -41,7 +41,31 @@ const Cart = ({ cartItems, onRemove, onUpdateQuantity }) => {
                             {/* Description */}
                             <div>
                                 <h3 style={{ fontSize: '1.1rem', margin: '0 0 0.25rem 0' }}>{item.name}</h3>
-                                <p style={{ fontSize: '0.9rem', color: '#666', margin: 0 }}>Coloris : {item.selectedColor?.name || 'Standard'}</p>
+                                <div style={{ marginBottom: '0.5rem' }}>
+                                    <select
+                                        value={item.selectedColor?.id}
+                                        onChange={(e) => {
+                                            const newColorId = e.target.value;
+                                            if (newColorId !== item.selectedColor?.id) {
+                                                onUpdateColor(item.id, item.selectedColor?.id, newColorId);
+                                            }
+                                        }}
+                                        style={{
+                                            padding: '0.2rem 0.5rem',
+                                            borderRadius: '4px',
+                                            border: '1px solid #ddd',
+                                            fontSize: '0.9rem',
+                                            color: '#555',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
+                                        {products.find(p => p.id === item.id.split('-col-')[0])?.colors.map(color => (
+                                            <option key={color.id} value={color.id}>
+                                                {color.name}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
                             </div>
 
                             {/* Quantity */}
@@ -112,7 +136,7 @@ const Cart = ({ cartItems, onRemove, onUpdateQuantity }) => {
                         </button>
                     </div>
                 </div>
-            </div>
+            </div >
 
             <style>{`
                 @media (max-width: 768px) {
@@ -137,7 +161,7 @@ const Cart = ({ cartItems, onRemove, onUpdateQuantity }) => {
                     div[style*="grid-template-columns: 80px 2fr 1fr 1fr auto"] > button { grid-area: remove; justify-self: end; }
                 }
             `}</style>
-        </div>
+        </div >
     );
 };
 
