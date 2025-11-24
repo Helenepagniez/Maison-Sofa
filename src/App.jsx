@@ -10,11 +10,16 @@ import Footer from './components/Footer';
 import Legal from './pages/Legal';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Cart from './pages/Cart';
+
+import PageHeader from './components/PageHeader';
 
 const App = () => {
   const [cartItems, setCartItems] = useState(() => {
     const savedCart = localStorage.getItem('cart');
-    return savedCart ? JSON.parse(savedCart) : [];
+    const parsedCart = savedCart ? JSON.parse(savedCart) : [];
+    // Filter out invalid items (e.g. missing selectedColor) to prevent crashes
+    return parsedCart.filter(item => item.selectedColor && item.selectedColor.id);
   });
   const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -61,6 +66,7 @@ const App = () => {
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Navbar cartCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)} onOpenCart={() => setIsCartOpen(true)} />
         <main style={{ flex: 1 }}>
+          <PageHeader />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<ProductConfigurator onAddToCart={addToCart} />} />
@@ -69,6 +75,7 @@ const App = () => {
             <Route path="/legal" element={<Legal />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/cart" element={<Cart cartItems={cartItems} onRemove={removeFromCart} onUpdateQuantity={updateQuantity} />} />
           </Routes>
         </main>
         <Footer />

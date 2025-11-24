@@ -36,7 +36,8 @@ const ProductConfigurator = ({ onAddToCart }) => {
         <div className="container" style={{ padding: '4rem 2rem', minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
             <button
                 onClick={() => navigate('/')}
-                style={{ position: 'absolute', top: '100px', left: '2rem', textDecoration: 'underline', fontSize: '0.9rem', color: '#666' }}
+                className="btn-back"
+                style={{ position: 'absolute', top: '100px', left: '2rem' }}
             >
                 ← Retour à la collection
             </button>
@@ -68,7 +69,7 @@ const ProductConfigurator = ({ onAddToCart }) => {
                     </p>
 
                     <div style={{ marginBottom: '2rem' }}>
-                        <p style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem' }}>Choisir la finition</p>
+                        <p style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem' }}>Choisir le coloris</p>
                         <div className="flex gap-4">
                             {activeProduct.colors.map((color) => (
                                 <button
@@ -101,7 +102,7 @@ const ProductConfigurator = ({ onAddToCart }) => {
 
                     <button
                         className="btn-primary"
-                        onClick={() => onAddToCart({ ...activeProduct, ...selectedColor, id: `${activeProduct.id}-${selectedColor.id}` })}
+                        onClick={() => onAddToCart({ ...activeProduct, selectedColor, id: `${activeProduct.id}-${selectedColor.id}` })}
                         style={{ width: '100%' }}
                     >
                         Ajouter au Panier

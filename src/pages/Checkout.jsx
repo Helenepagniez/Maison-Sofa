@@ -21,7 +21,7 @@ const Checkout = ({ cartItems, clearCart }) => {
         return (
             <div className="container" style={{ padding: '4rem 0', textAlign: 'center' }}>
                 <h2>Votre panier est vide</h2>
-                <button className="btn-secondary" onClick={() => navigate('/')} style={{ marginTop: '2rem' }}>Retourner à la boutique</button>
+                <button className="btn-back" onClick={() => navigate('/')} style={{ marginTop: '2rem' }}>Retourner à la boutique</button>
             </div>
         );
     }

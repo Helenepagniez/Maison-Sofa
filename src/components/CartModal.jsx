@@ -2,16 +2,16 @@ import React from 'react';
 import { X, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const CartModal = ({ isOpen, onClose, cartItems, onRemoveItem }) => {
+const CartModal = ({ isOpen, onClose, cartItems, onRemove, onUpdateQuantity }) => {
     const navigate = useNavigate();
 
     if (!isOpen) return null;
 
-    const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+    const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-    const handleCheckout = () => {
+    const handleViewCart = () => {
         onClose();
-        navigate('/checkout');
+        navigate('/cart');
     };
 
     return (
@@ -51,16 +51,31 @@ const CartModal = ({ isOpen, onClose, cartItems, onRemoveItem }) => {
                     ) : (
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             {cartItems.map((item, index) => (
-                                <div key={`${item.id}-${index}`} style={{ display: 'flex', gap: '1rem', borderBottom: '1px solid #eee', paddingBottom: '1.5rem' }}>
+                                <div key={`${item.id}-${item.selectedColor?.id}-${index}`} style={{ display: 'flex', gap: '1rem', borderBottom: '1px solid #eee', paddingBottom: '1.5rem' }}>
                                     <div style={{ width: '100px', height: '100px', backgroundColor: '#f9f9f9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                         <img src={item.image} alt={item.name} style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }} />
                                     </div>
                                     <div style={{ flex: 1 }}>
                                         <h3 style={{ fontSize: '1rem', margin: '0 0 0.5rem 0' }}>{item.name}</h3>
-                                        <p style={{ fontSize: '0.9rem', color: '#666', margin: 0 }}>{item.name}</p> {/* This was redundant in English too, but let's fix it to show color name if available or just remove */}
-                                        <p style={{ fontSize: '1rem', fontWeight: 'bold', marginTop: '0.5rem' }}>{item.price.toLocaleString()}€</p>
+                                        <p style={{ fontSize: '0.9rem', color: '#666', margin: 0 }}>Coloris : {item.selectedColor?.name || 'Standard'}</p>
+
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '0.5rem' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #ddd', borderRadius: '4px' }}>
+                                                <button
+                                                    onClick={() => onUpdateQuantity(item.id, item.selectedColor?.id, item.quantity - 1)}
+                                                    style={{ padding: '0.1rem 0.5rem', background: 'none', border: 'none', cursor: 'pointer', color: '#666' }}
+                                                    disabled={item.quantity <= 1}
+                                                >-</button>
+                                                <span style={{ padding: '0.1rem 0.5rem', borderLeft: '1px solid #ddd', borderRight: '1px solid #ddd', fontSize: '0.9rem' }}>{item.quantity}</span>
+                                                <button
+                                                    onClick={() => onUpdateQuantity(item.id, item.selectedColor?.id, item.quantity + 1)}
+                                                    style={{ padding: '0.1rem 0.5rem', background: 'none', border: 'none', cursor: 'pointer', color: '#666' }}
+                                                >+</button>
+                                            </div>
+                                            <p style={{ fontSize: '1rem', fontWeight: 'bold' }}>{(item.price * item.quantity).toLocaleString()}€</p>
+                                        </div>
                                     </div>
-                                    <button onClick={() => onRemoveItem(index)} style={{ color: '#999' }}>
+                                    <button onClick={() => onRemove(item.id, item.selectedColor?.id)} style={{ color: '#999', height: 'fit-content' }}>
                                         <Trash2 size={18} />
                                     </button>
                                 </div>
@@ -75,12 +90,12 @@ const CartModal = ({ isOpen, onClose, cartItems, onRemoveItem }) => {
                         <span style={{ fontSize: '1.5rem', fontFamily: 'var(--font-heading)' }}>{total.toLocaleString()}€</span>
                     </div>
                     <button
-                        className="btn-primary"
+                        className="btn-accent"
                         style={{ width: '100%' }}
                         disabled={cartItems.length === 0}
-                        onClick={handleCheckout}
+                        onClick={handleViewCart}
                     >
-                        Passer la commande
+                        Voir mon panier
                     </button>
                 </div>
             </div>

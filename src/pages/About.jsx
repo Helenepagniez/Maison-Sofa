@@ -30,34 +30,34 @@ const About = () => {
 
             <div style={{ backgroundColor: '#f9f9f9', borderRadius: '8px', textAlign: 'center', marginBottom: '6rem' }}>
                 <h2 style={{ fontSize: '2rem', marginBottom: '2rem', fontFamily: 'var(--font-heading)' }}>Nos Valeurs</h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '3rem' }} className="values-grid">
+                <div style={{ display: 'grid', gap: '3rem' }} className="values-grid">
                     <div>
                         <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}>
                             <Leaf size={40} color="var(--color-accent)" />
                         </div>
                         <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--color-accent)', fontWeight: 'bold' }}>Durabilité</h3>
-                        <p style={{ color: '#666', lineHeight: '1.6' }}>Nous créons des meubles conçus pour durer, en privilégiant des matériaux éco-responsables et des processus de fabrication respectueux de l'environnement.</p>
+                        <p style={{ color: '#666', lineHeight: '1.6', textAlign: 'justify' }}>Nous créons des meubles conçus pour durer, en privilégiant des matériaux éco-responsables et des processus de fabrication respectueux de l'environnement.</p>
                     </div>
                     <div>
                         <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}>
                             <Lightbulb size={40} color="var(--color-accent)" />
                         </div>
                         <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--color-accent)', fontWeight: 'bold' }}>Innovation</h3>
-                        <p style={{ color: '#666', lineHeight: '1.6' }}>Nous ne cessons de repousser les limites du design pour vous offrir des fonctionnalités modernes sans jamais sacrifier l'élégance.</p>
+                        <p style={{ color: '#666', lineHeight: '1.6', textAlign: 'justify' }}>Nous ne cessons de repousser les limites du design pour vous offrir des fonctionnalités modernes sans jamais sacrifier l'élégance.</p>
                     </div>
                     <div>
                         <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}>
                             <Heart size={40} color="var(--color-accent)" />
                         </div>
                         <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--color-accent)', fontWeight: 'bold' }}>Passion</h3>
-                        <p style={{ color: '#666', lineHeight: '1.6' }}>L'amour du beau et du bien-fait est au cœur de notre ADN. C'est cette passion qui anime nos équipes chaque jour.</p>
+                        <p style={{ color: '#666', lineHeight: '1.6', textAlign: 'justify' }}>L'amour du beau et du bien-fait est au cœur de notre ADN. C'est cette passion qui anime nos équipes chaque jour.</p>
                     </div>
                     <div>
                         <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}>
                             <Award size={40} color="var(--color-accent)" />
                         </div>
                         <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--color-accent)', fontWeight: 'bold' }}>Excellence</h3>
-                        <p style={{ color: '#666', lineHeight: '1.6' }}>Chaque détail compte. De la sélection des matières premières à la livraison finale, nous visons la perfection à chaque étape.</p>
+                        <p style={{ color: '#666', lineHeight: '1.6', textAlign: 'justify' }}>Chaque détail compte. De la sélection des matières premières à la livraison finale, nous visons la perfection à chaque étape.</p>
                     </div>
                 </div>
             </div>

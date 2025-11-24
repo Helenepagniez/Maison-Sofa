@@ -28,7 +28,7 @@ const Navbar = ({ cartCount, onOpenCart }) => {
                     </div>
 
                     <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                        <span className="navbar-brand" style={{ fontSize: '1.5rem', margin: 0, letterSpacing: '2px', fontWeight: 'bold', display: 'block', fontFamily: 'var(--font-heading)' }}>MAISON SOFA</span>
+                        <span className="navbar-brand" style={{ fontSize: '1.5rem', margin: 0, letterSpacing: '2px', display: 'block', fontFamily: 'var(--font-heading)' }}>MAISON SOFA</span>
                     </Link>
 
                     {/* Desktop Navigation */}

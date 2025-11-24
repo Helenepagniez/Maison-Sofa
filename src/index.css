@@ -91,6 +91,49 @@ button {
   color: white;
 }
 
+.btn-back {
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: 30px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.btn-back:hover {
+  opacity: 0.9;
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: 30px;
+  padding: 0.8rem 2rem;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-accent:hover {
+  opacity: 0.9;
+}
+
 /* Utilities */
 .flex {
   display: flex;
@@ -388,7 +431,28 @@ h3 {
 @media (max-width: 768px) {
   .checkout-grid {
     display: flex;
-    flex-direction: column;
     gap: 2rem;
+  }
+}
+
+/* Values Grid Responsive Layout */
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* Mobile: 1 column */
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* Tablet & Small Desktop: 2 columns */
+  }
+}
+
+@media (min-width: 1440px) {
+  .values-grid {
+    grid-template-columns: repeat(4, 1fr);
+    /* Large Desktop: 4 columns */
   }
 }
