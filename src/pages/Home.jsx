@@ -110,43 +110,27 @@ const Home = () => {
                 {
                     filteredProducts.map(product => (
                         <Link to={`/product/${product.id}`} key={product.id} style={{ textDecoration: 'none', color: 'inherit' }}>
-                            <div className="product-card" style={{ cursor: 'pointer', group: 'card' }}>
-                                <div style={{
-                                    backgroundColor: '#e5e5e5',
-                                    height: '300px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    marginBottom: '1.5rem',
-                                    position: 'relative',
-                                    overflow: 'hidden',
-                                    borderRadius: '4px'
-                                }}>
+                            <div className="product-card">
+                                <div className="product-image-wrapper">
                                     <img
                                         src={product.baseImage}
                                         alt={product.name}
+                                        className="product-image"
+                                        data-flipped={!!product.flipped}
                                         style={{
-                                            maxWidth: '90%',
-                                            maxHeight: '90%',
-                                            objectFit: 'contain',
-                                            transition: 'transform 0.5s ease',
-                                            transform: product.flipped ? 'scaleX(-1)' : 'scaleX(1)',
-                                            filter: `drop-shadow(0 10px 20px rgba(0,0,0,0.1)) ${product.colors[0].filter || 'none'}`,
-                                            mixBlendMode: 'multiply'
+                                            filter: `drop-shadow(0 10px 20px rgba(0,0,0,0.1)) ${product.colors[0].filter || 'none'}`
                                         }}
-                                        onMouseOver={(e) => e.currentTarget.style.transform = product.flipped ? 'scaleX(-1) scale(1.05)' : 'scale(1.05)'}
-                                        onMouseOut={(e) => e.currentTarget.style.transform = product.flipped ? 'scaleX(-1)' : 'scale(1)'}
                                     />
                                 </div>
 
-                                <div className="flex justify-between items-start">
-                                    <div>
-                                        <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--color-accent)' }}>{product.name}</h3>
-                                        <p style={{ color: '#666', fontSize: '0.9rem' }}>{product.colors.length} Coloris disponibles</p>
+                                <div className="product-details">
+                                    <div className="product-header">
+                                        <h3 className="product-name">{product.name}</h3>
+                                        <span className="product-price">
+                                            {product.price.toLocaleString()}€
+                                        </span>
                                     </div>
-                                    <span style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>
-                                        {product.price.toLocaleString()}€
-                                    </span>
+                                    <p className="product-colors">{product.colors.length} Coloris disponibles</p>
                                 </div>
                             </div>
                         </Link>
@@ -229,6 +213,95 @@ const Home = () => {
                 .filter-btn.selected:hover {
                     color: white;
                     background-color: var(--color-accent);
+                }
+
+                /* Product Card Styles */
+                .product-card {
+                    background: white;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    border: 1px solid transparent;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .product-card:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+                    border-color: rgba(0,0,0,0.05);
+                }
+
+                .product-image-wrapper {
+                    background-color: #f4f4f4;
+                    height: 220px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 12px;
+                    margin: 10px;
+                }
+
+                .product-image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                    mix-blend-mode: multiply;
+                    transform: scale(1);
+                }
+
+                .product-image[data-flipped="true"] {
+                    transform: scaleX(-1);
+                }
+
+                .product-card:hover .product-image {
+                    transform: scale(1.1);
+                }
+
+                .product-card:hover .product-image[data-flipped="true"] {
+                    transform: scale(-1.1, 1.1);
+                }
+
+                .product-details {
+                    padding: 0.5rem 1.2rem 1.5rem 1.2rem;
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                .product-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    margin-bottom: 0.5rem;
+                }
+
+                .product-name {
+                    font-size: 1.05rem;
+                    font-weight: 600;
+                    color: var(--color-accent);
+                    margin: 0;
+                    line-height: 1.4;
+                }
+
+                .product-price {
+                    font-weight: 700;
+                    color: var(--color-accent);
+                    font-size: 1.1rem;
+                    white-space: nowrap;
+                    margin-left: 1rem;
+                }
+
+                .product-colors {
+                    font-size: 0.85rem;
+                    color: #999;
+                    margin: 0;
+                    font-weight: 500;
                 }
             `}</style>
         </div >
