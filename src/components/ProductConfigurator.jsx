@@ -33,19 +33,11 @@ const ProductConfigurator = ({ onAddToCart }) => {
     };
 
     return (
-        <div className="container" style={{ padding: '4rem 2rem', minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
-            <button
-                onClick={() => navigate('/')}
-                className="btn-back"
-                style={{ position: 'absolute', top: '100px', left: '2rem' }}
-            >
-                ← Retour à la collection
-            </button>
-
-            <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '4rem', width: '100%' }}>
+        <div className="container product-page-container">
+            <div className="product-configurator-grid">
 
                 {/* Image Section */}
-                <div style={{ position: 'relative', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0', borderRadius: '4px', overflow: 'hidden' }}>
+                <div className="product-image-section">
                     <img
                         src={selectedColor.image}
                         alt={selectedColor.name}
@@ -70,7 +62,7 @@ const ProductConfigurator = ({ onAddToCart }) => {
 
                     <div style={{ marginBottom: '2rem' }}>
                         <p style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem' }}>Choisir le coloris</p>
-                        <div className="flex gap-4">
+                        <div className="color-options-container">
                             {activeProduct.colors.map((color) => (
                                 <button
                                     key={color.id}
@@ -118,7 +110,57 @@ const ProductConfigurator = ({ onAddToCart }) => {
                     </div>
                 </div>
             </div>
-        </div>
+
+            <style>{`
+                .product-page-container {
+                    padding: 2rem 1rem;
+                    min-height: 80vh;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .product-configurator-grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                    width: 100%;
+                    margin-top: 2rem;
+                }
+
+                .product-image-section {
+                    position: relative;
+                    height: 350px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #f0f0f0;
+                    border-radius: 4px;
+                    overflow: hidden;
+                }
+
+                @media (min-width: 768px) {
+                    .product-page-container {
+                        padding: 4rem 2rem;
+                    }
+
+                    .product-configurator-grid {
+                        grid-template-columns: 1.5fr 1fr;
+                        gap: 4rem;
+                    }
+
+                    .product-image-section {
+                        height: 600px;
+                    }
+                }
+
+                .color-options-container {
+                    display: flex;
+                    gap: 1rem;
+                    flex-wrap: wrap;
+                }
+            `}</style>
+        </div >
     );
 };
 
