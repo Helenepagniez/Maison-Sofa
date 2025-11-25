@@ -87,13 +87,13 @@ const ProductConfigurator = ({ onAddToCart }) => {
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '2rem' }}>
-                        <span style={{ fontSize: '2rem', fontFamily: 'var(--font-heading)' }}>
+                        <span style={{ fontSize: '2rem', fontFamily: 'var(--font-heading)', color: 'var(--color-accent)' }}>
                             {selectedColor.price.toLocaleString()}€
                         </span>
                     </div>
 
                     <button
-                        className="btn-primary"
+                        className="btn-accent"
                         onClick={() => onAddToCart({ ...activeProduct, selectedColor, id: `${activeProduct.id}-${selectedColor.id}` })}
                         style={{ width: '100%' }}
                     >
