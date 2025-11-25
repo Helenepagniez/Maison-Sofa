@@ -116,10 +116,6 @@ const Home = () => {
                                         src={product.baseImage}
                                         alt={product.name}
                                         className="product-image"
-                                        data-flipped={!!product.flipped}
-                                        style={{
-                                            filter: `drop-shadow(0 10px 20px rgba(0,0,0,0.1)) ${product.colors[0].filter || 'none'}`
-                                        }}
                                     />
                                 </div>
 
