@@ -80,7 +80,24 @@ const generateProducts = () => {
             baseImage: baseImage,
             flipped: isFlipped, // New property for mirroring
             colors: modelColors,
-            features: ['Structure Bois Massif', 'Mousse Haute Densité', 'Garantie 10 ans']
+            features: ['Structure Bois Massif', 'Mousse Haute Densité', 'Garantie 10 ans'],
+            dimensions: {
+                width: 200 + (i % 5) * 20,
+                height: 85 + (i % 3) * 5,
+                depth: 95 + (i % 4) * 5,
+                seatHeight: 45
+            },
+            materialDetails: {
+                structure: 'Hêtre massif certifié FSC',
+                suspension: 'Ressorts Nosag en acier trempé',
+                filling: 'Mousse polyuréthane HR 35kg/m³ + couche de contact plumes',
+                coating: materials[i % materials.length]
+            },
+            longDescription: [
+                `L'élégance intemporelle du modèle ${adjectives[i % adjectives.length]} ${i} redéfinit les standards du confort contemporain. Conçu pour s'intégrer harmonieusement dans les intérieurs les plus exigeants, ce canapé allie une silhouette épurée à une générosité d'assise exceptionnelle.`,
+                `Chaque détail a été pensé pour offrir une expérience sensorielle unique. Le toucher incomparable du ${materials[i % materials.length].toLowerCase()} sélectionné parmi les meilleures filatures européennes invite à la détente absolue. La structure en bois massif, assemblée de manière traditionnelle, garantit une longévité remarquable à cette pièce maîtresse de votre salon.`,
+                `Au-delà de son esthétique soignée, ce modèle se distingue par son ergonomie étudiée. La profondeur d'assise et l'inclinaison du dossier ont été calibrées pour offrir un maintien optimal, que ce soit pour des moments de convivialité ou de repos solitaire. Une véritable invitation au lâcher-prise, signée Maison Sofa.`
+            ]
         });
     }
 

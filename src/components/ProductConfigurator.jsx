@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Check } from 'lucide-react';
+import { Check, Ruler, Layers, Feather, Hammer } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { products } from '../data/products';
 
@@ -56,7 +56,7 @@ const ProductConfigurator = ({ onAddToCart }) => {
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <h2 style={{ fontSize: '1rem', color: 'var(--color-accent)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1rem' }}>Collection {activeProduct.category}</h2>
                     <h1 style={{ marginBottom: '1rem' }}>{activeProduct.name}</h1>
-                    <p style={{ fontSize: '1.1rem', color: '#666', marginBottom: '2rem', maxWidth: '500px' }}>
+                    <p style={{ fontSize: '15px', color: '#666', marginBottom: '2rem', maxWidth: '500px' }}>
                         {activeProduct.description}
                     </p>
 
@@ -111,6 +111,58 @@ const ProductConfigurator = ({ onAddToCart }) => {
                 </div>
             </div>
 
+            {/* Extended Details Section */}
+            <div className="product-details-extended">
+                <div className="details-column description-column">
+                    <h3 className="details-title">L'Esprit du Modèle</h3>
+                    {activeProduct.longDescription && activeProduct.longDescription.map((paragraph, index) => (
+                        <p key={index} className="details-text" style={{ fontSize: '15px', lineHeight: '1.6', marginBottom: '1rem' }}>
+                            {paragraph}
+                        </p>
+                    ))}
+                </div>
+
+                <div className="details-column specs-column">
+                    <h3 className="details-title">Caractéristiques Techniques</h3>
+
+                    <div className="specs-grid">
+                        <div className="spec-item">
+                            <Ruler className="spec-icon" size={24} />
+                            <div>
+                                <h4>Dimensions</h4>
+                                <p>L {activeProduct.dimensions?.width} x H {activeProduct.dimensions?.height} x P {activeProduct.dimensions?.depth} cm</p>
+                                <p className="sub-spec">Hauteur d'assise : {activeProduct.dimensions?.seatHeight} cm</p>
+                            </div>
+                        </div>
+
+                        <div className="spec-item">
+                            <Hammer className="spec-icon" size={24} />
+                            <div>
+                                <h4>Structure</h4>
+                                <p>{activeProduct.materialDetails?.structure}</p>
+                            </div>
+                        </div>
+
+                        <div className="spec-item">
+                            <Layers className="spec-icon" size={24} />
+                            <div>
+                                <h4>Suspension & Garnissage</h4>
+                                <p>{activeProduct.materialDetails?.suspension}</p>
+                                <p className="sub-spec">{activeProduct.materialDetails?.filling}</p>
+                            </div>
+                        </div>
+
+                        <div className="spec-item">
+                            <Feather className="spec-icon" size={24} />
+                            <div>
+                                <h4>Revêtement</h4>
+                                <p>{activeProduct.materialDetails?.coating}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <style>{`
                 .product-page-container {
                     padding: 2rem 1rem;
@@ -159,8 +211,81 @@ const ProductConfigurator = ({ onAddToCart }) => {
                     gap: 1rem;
                     flex-wrap: wrap;
                 }
+
+                /* Extended Details Styles */
+                .product-details-extended {
+                    width: 100%;
+                    margin-top: 2rem;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                    border-top: 1px solid #eee;
+                    padding-top: 2rem;
+                }
+
+                .details-title {
+                    font-size: 1.5rem;
+                    color: var(--color-accent);
+                    margin-bottom: 1.5rem;
+                    font-family: var(--font-heading);
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+
+                .details-text {
+                    margin-bottom: 1.5rem;
+                    color: #555;
+                    line-height: 1.8;
+                    font-size: 1.05rem;
+                    text-align: justify;
+                }
+
+                .specs-grid {
+                    display: grid;
+                    gap: 2rem;
+                }
+
+                .spec-item {
+                    display: flex;
+                    gap: 1.5rem;
+                    align-items: flex-start;
+                }
+
+                .spec-icon {
+                    color: var(--color-accent);
+                    flex-shrink: 0;
+                    margin-top: 0.2rem;
+                }
+
+                .spec-item h4 {
+                    font-size: 1rem;
+                    font-weight: bold;
+                    margin-bottom: 0.3rem;
+                    color: #333;
+                    text-transform: uppercase;
+                }
+
+                .spec-item p {
+                    color: #666;
+                    font-size: 0.95rem;
+                    margin: 0;
+                    line-height: 1.4;
+                }
+
+                .sub-spec {
+                    font-size: 0.85rem !important;
+                    color: #888 !important;
+                    margin-top: 0.2rem !important;
+                }
+
+                @media (min-width: 900px) {
+                    .product-details-extended {
+                        grid-template-columns: 1.2fr 0.8fr;
+                        gap: 6rem;
+                    }
+                }
             `}</style>
-        </div >
+        </div>
     );
 };
 

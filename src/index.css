@@ -47,6 +47,10 @@ h6 {
   margin-bottom: var(--spacing-sm);
 }
 
+p {
+  font-size: 15px !important;
+}
+
 button {
   font-family: var(--font-body);
   cursor: pointer;
