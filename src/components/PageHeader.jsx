@@ -44,7 +44,7 @@ const PageHeader = () => {
     }
 
     return (
-        <div className="container" style={{ padding: '1rem 2rem', marginTop: '1rem' }}>
+        <div className="container" style={{ padding: '0.5rem 2rem', marginBottom: '1.5rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                 {/* Back Button */}
                 <button

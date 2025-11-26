@@ -188,7 +188,7 @@ const ProductConfigurator = ({ onAddToCart }) => {
 
                 @media (min-width: 768px) {
                     .product-page-container {
-                        padding: 4rem 2rem;
+                        padding: 1rem 2rem;
                     }
 
                     .product-configurator-grid {

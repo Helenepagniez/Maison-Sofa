@@ -3,7 +3,7 @@ import { Leaf, Lightbulb, Heart, Award } from 'lucide-react';
 
 const About = () => {
     return (
-        <div className="container" style={{ padding: '4rem 2rem', maxWidth: '900px', margin: '0 auto' }}>
+        <div className="container" style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                 <h1 style={{ marginBottom: '1.5rem', fontFamily: 'var(--font-heading)', letterSpacing: '2px', color: 'var(--color-accent)' }}>NOTRE HISTOIRE</h1>
                 <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--color-accent)', margin: '0 auto' }}></div>

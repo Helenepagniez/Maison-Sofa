@@ -16,7 +16,7 @@ const Cart = ({ cartItems, onRemove, onUpdateQuantity, onUpdateColor, products }
     }
 
     return (
-        <div className="container" style={{ padding: '4rem 0', minHeight: '80vh' }}>
+        <div className="container" style={{ minHeight: '80vh' }}>
             <h1 style={{ textAlign: 'center', marginBottom: '4rem', color: 'var(--color-accent)' }}>Mon Panier</h1>
 
             <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
