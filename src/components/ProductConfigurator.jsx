@@ -37,11 +37,6 @@ const ProductConfigurator = ({ onAddToCart }) => {
                         src={selectedColor.image}
                         alt={selectedColor.name}
                         title={selectedColor.name}
-                        style={{
-                            maxWidth: '90%',
-                            maxHeight: '90%',
-                            objectFit: 'contain'
-                        }}
                     />
                 </div>
 
@@ -175,13 +170,20 @@ const ProductConfigurator = ({ onAddToCart }) => {
 
                 .product-image-section {
                     position: relative;
-                    height: 350px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    background-color: #f0f0f0;
-                    border-radius: 4px;
-                    overflow: hidden;
+                    background-color: white;
+                    border-radius: 18px;
+                    padding: 0;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+                }
+                
+                .product-image-section img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 15px;
                 }
 
                 @media (min-width: 768px) {
@@ -191,11 +193,10 @@ const ProductConfigurator = ({ onAddToCart }) => {
 
                     .product-configurator-grid {
                         grid-template-columns: 1.5fr 1fr;
-                        gap: 4rem;
                     }
 
                     .product-image-section {
-                        height: 600px;
+                        height: 350px;
                     }
                 }
 
@@ -275,6 +276,10 @@ const ProductConfigurator = ({ onAddToCart }) => {
                     .product-details-extended {
                         grid-template-columns: 1.2fr 0.8fr;
                         gap: 6rem;
+                    }
+
+                    .product-image-section {
+                        height: 600px;
                     }
                 }
             `}</style>
