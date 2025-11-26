@@ -33,7 +33,7 @@ const Navbar = ({ cartCount, onOpenCart }) => {
 
                     {/* Desktop Navigation */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '3rem' }} className="desktop-nav">
-                        <Link to="/about" className="nav-item-hover" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', minWidth: '80px' }} title="En savoir plus sur Maison Sofa">
+                        <Link to="/about" className="nav-item-hover" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', minWidth: '80px' }} title="À propos de nous">
                             <div style={{ width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <Info size={24} color="var(--color-accent)" />
                             </div>
@@ -131,7 +131,7 @@ const Navbar = ({ cartCount, onOpenCart }) => {
                             to="/about"
                             style={{ color: 'white', fontSize: '1.5rem', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '2px' }}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            title="En savoir plus sur Maison Sofa"
+                            title="À propos de nous"
                         >
                             À Propos
                         </Link>

@@ -109,7 +109,7 @@ const Home = () => {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '3rem' }}>
                 {
                     filteredProducts.map(product => (
-                        <Link to={`/product/${product.id}`} key={product.id} style={{ textDecoration: 'none', color: 'inherit' }} title={`Voir le détail du canapé ${product.name}`}>
+                        <Link to={`/product/${product.id}`} key={product.id} style={{ textDecoration: 'none', color: 'inherit' }} title={`Découvrir ce canapé`}>
                             <div className="product-card">
                                 <div className="product-image-wrapper">
                                     <img
