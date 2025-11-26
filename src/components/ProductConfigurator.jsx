@@ -12,7 +12,6 @@ const ProductConfigurator = ({ onAddToCart }) => {
     const activeProduct = product || products[0];
 
     const [selectedColor, setSelectedColor] = useState(activeProduct.colors[0]);
-    const [isAnimating, setIsAnimating] = useState(false);
 
     // Reset selected color when product changes
     useEffect(() => {
@@ -25,11 +24,7 @@ const ProductConfigurator = ({ onAddToCart }) => {
 
     const handleColorChange = (color) => {
         if (color.id === selectedColor.id) return;
-        setIsAnimating(true);
-        setTimeout(() => {
-            setSelectedColor(color);
-            setIsAnimating(false);
-        }, 300);
+        setSelectedColor(color);
     };
 
     return (
@@ -45,10 +40,7 @@ const ProductConfigurator = ({ onAddToCart }) => {
                         style={{
                             maxWidth: '90%',
                             maxHeight: '90%',
-                            objectFit: 'contain',
-                            transition: 'opacity 0.3s ease',
-                            opacity: isAnimating ? 0 : 1,
-                            filter: isAnimating ? 'blur(10px) opacity(0)' : `drop-shadow(0 20px 30px rgba(0,0,0,0.15)) ${selectedColor.filter || 'none'}`
+                            objectFit: 'contain'
                         }}
                     />
                 </div>

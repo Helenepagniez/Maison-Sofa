@@ -54,7 +54,6 @@ const generateProducts = () => {
 
     for (let i = 1; i <= 30; i++) {
         const shapeIndex = i % 3;
-        const isFlipped = i % 2 === 0; // Flip every other sofa to create visual variety
         const baseImage = baseImages[shapeIndex];
 
         // Select a fixed palette based on the product index
@@ -67,7 +66,7 @@ const generateProducts = () => {
             id: `col-${i}-${c}`,
             name: color.name,
             hex: `hsl(${color.hue}, ${color.sat * 100}%, ${color.light * 100}%)`,
-            filter: `hue-rotate(${color.hue}deg) saturate(${color.sat}) brightness(${color.light})`,
+            image: baseImage, // Same image for all colors of this product
             price: price
         }));
 
@@ -78,7 +77,6 @@ const generateProducts = () => {
             description: `Le modèle ${i} incarne l'excellence du savoir-faire italien. Une pièce unique qui allie ${materials[i % materials.length]} et design ${shapes[i % shapes.length]}.`,
             category: i % 3 === 0 ? 'Moderne' : i % 3 === 1 ? 'Classique' : 'Minimaliste',
             baseImage: baseImage,
-            flipped: isFlipped, // New property for mirroring
             colors: modelColors,
             features: ['Structure Bois Massif', 'Mousse Haute Densité', 'Garantie 10 ans'],
             dimensions: {
