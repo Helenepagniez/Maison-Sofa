@@ -19,11 +19,11 @@ const Footer = () => {
                 <div>
                     <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem', color: 'var(--color-accent)', textTransform: 'uppercase', letterSpacing: '1px' }}>Navigation</h4>
                     <ul style={{ listStyle: 'none', padding: 0 }}>
-                        <li style={{ marginBottom: '0.8rem' }}><Link to="/" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={e => e.target.style.color = 'var(--color-accent)'} onMouseOut={e => e.target.style.color = '#ccc'}>Accueil</Link></li>
-                        <li style={{ marginBottom: '0.8rem' }}><Link to="/about" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={e => e.target.style.color = 'var(--color-accent)'} onMouseOut={e => e.target.style.color = '#ccc'}>À Propos</Link></li>
-                        <li style={{ marginBottom: '0.8rem' }}><Link to="/contact" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={e => e.target.style.color = 'var(--color-accent)'} onMouseOut={e => e.target.style.color = '#ccc'}>Contact</Link></li>
-                        <li style={{ marginBottom: '0.8rem' }}><Link to="/cart" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={e => e.target.style.color = 'var(--color-accent)'} onMouseOut={e => e.target.style.color = '#ccc'}>Mon Panier</Link></li>
-                        <li style={{ marginBottom: '0.8rem' }}><Link to="/legal" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={e => e.target.style.color = 'var(--color-accent)'} onMouseOut={e => e.target.style.color = '#ccc'}>Mentions Légales</Link></li>
+                        <li style={{ marginBottom: '0.8rem' }}><Link to="/" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={e => e.target.style.color = 'var(--color-accent)'} onMouseOut={e => e.target.style.color = '#ccc'} title="Retour à l'accueil">Accueil</Link></li>
+                        <li style={{ marginBottom: '0.8rem' }}><Link to="/about" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={e => e.target.style.color = 'var(--color-accent)'} onMouseOut={e => e.target.style.color = '#ccc'} title="En savoir plus sur Maison Sofa">À Propos</Link></li>
+                        <li style={{ marginBottom: '0.8rem' }}><Link to="/contact" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={e => e.target.style.color = 'var(--color-accent)'} onMouseOut={e => e.target.style.color = '#ccc'} title="Nous contacter">Contact</Link></li>
+                        <li style={{ marginBottom: '0.8rem' }}><Link to="/cart" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={e => e.target.style.color = 'var(--color-accent)'} onMouseOut={e => e.target.style.color = '#ccc'} title="Voir mon panier">Mon Panier</Link></li>
+                        <li style={{ marginBottom: '0.8rem' }}><Link to="/legal" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={e => e.target.style.color = 'var(--color-accent)'} onMouseOut={e => e.target.style.color = '#ccc'} title="Consulter les mentions légales">Mentions Légales</Link></li>
                     </ul>
                 </div>
 
@@ -58,13 +58,13 @@ const Footer = () => {
             <div className="container" style={{ borderTop: '1px solid #333', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
                 <p style={{ color: '#ffffffff', fontSize: '0.8rem' }}>&copy; 2025 Maison Sofa. Tous droits réservés.</p>
                 <div style={{ display: 'flex', gap: '1.5rem' }}>
-                    <a href="#" style={{ color: '#ffffffff', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>
+                    <a href="#" style={{ color: '#ffffffff', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'} title="Suivez-nous sur Facebook">
                         <Facebook size={20} />
                     </a>
-                    <a href="#" style={{ color: '#ffffffff', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>
+                    <a href="#" style={{ color: '#ffffffff', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'} title="Suivez-nous sur Instagram">
                         <Instagram size={20} />
                     </a>
-                    <a href="#" style={{ color: '#ffffffff', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>
+                    <a href="#" style={{ color: '#ffffffff', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'} title="Suivez-nous sur Twitter">
                         <Twitter size={20} />
                     </a>
                 </div>

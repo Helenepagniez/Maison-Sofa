@@ -57,7 +57,7 @@ const PageHeader = () => {
 
                 {/* Breadcrumbs */}
                 <nav style={{ display: 'flex', alignItems: 'center', fontSize: '0.9rem', color: '#666' }}>
-                    <Link to="/" style={{ display: 'flex', alignItems: 'center', color: '#666', textDecoration: 'none' }}>
+                    <Link to="/" style={{ display: 'flex', alignItems: 'center', color: '#666', textDecoration: 'none' }} title="Retour à l'accueil">
                         <Home size={16} />
                     </Link>
 
@@ -69,7 +69,7 @@ const PageHeader = () => {
                                     {item.name}
                                 </span>
                             ) : (
-                                <Link to={item.path} style={{ color: '#666', textDecoration: 'none' }}>
+                                <Link to={item.path} style={{ color: '#666', textDecoration: 'none' }} title={`Aller à la page ${item.name}`}>
                                     {item.name}
                                 </Link>
                             )}

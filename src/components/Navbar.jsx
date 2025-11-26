@@ -27,19 +27,19 @@ const Navbar = ({ cartCount, onOpenCart }) => {
                         />
                     </div>
 
-                    <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }} title="Retour à l'accueil">
                         <span className="navbar-brand" style={{ fontSize: '1.5rem', margin: 0, letterSpacing: '2px', display: 'block', fontFamily: 'var(--font-heading)' }}>MAISON SOFA</span>
                     </Link>
 
                     {/* Desktop Navigation */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '3rem' }} className="desktop-nav">
-                        <Link to="/about" className="nav-item-hover" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', minWidth: '80px' }}>
+                        <Link to="/about" className="nav-item-hover" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', minWidth: '80px' }} title="En savoir plus sur Maison Sofa">
                             <div style={{ width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <Info size={24} color="var(--color-accent)" />
                             </div>
                             <span style={{ color: 'var(--color-accent)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1px', whiteSpace: 'nowrap' }}>À Propos</span>
                         </Link>
-                        <Link to="/contact" className="nav-item-hover" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', minWidth: '80px' }}>
+                        <Link to="/contact" className="nav-item-hover" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', minWidth: '80px' }} title="Nous contacter">
                             <div style={{ width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                             </div>
@@ -123,6 +123,7 @@ const Navbar = ({ cartCount, onOpenCart }) => {
                             to="/"
                             style={{ color: 'white', fontSize: '1.5rem', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '2px' }}
                             onClick={() => setIsMobileMenuOpen(false)}
+                            title="Retour à l'accueil"
                         >
                             Accueil
                         </Link>
@@ -130,6 +131,7 @@ const Navbar = ({ cartCount, onOpenCart }) => {
                             to="/about"
                             style={{ color: 'white', fontSize: '1.5rem', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '2px' }}
                             onClick={() => setIsMobileMenuOpen(false)}
+                            title="En savoir plus sur Maison Sofa"
                         >
                             À Propos
                         </Link>
@@ -137,6 +139,7 @@ const Navbar = ({ cartCount, onOpenCart }) => {
                             to="/contact"
                             style={{ color: 'white', fontSize: '1.5rem', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '2px' }}
                             onClick={() => setIsMobileMenuOpen(false)}
+                            title="Nous contacter"
                         >
                             Contact
                         </Link>

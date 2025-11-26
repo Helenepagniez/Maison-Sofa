@@ -14,6 +14,7 @@ const About = () => {
                     <img
                         src="/chesterfield.png"
                         alt="Atelier Maison Sofa"
+                        title="Atelier Maison Sofa"
                         style={{ width: '100%', borderRadius: '8px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', filter: 'sepia(0.3)' }}
                     />
                 </div>

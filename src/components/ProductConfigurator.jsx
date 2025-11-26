@@ -41,6 +41,7 @@ const ProductConfigurator = ({ onAddToCart }) => {
                     <img
                         src={selectedColor.image}
                         alt={selectedColor.name}
+                        title={selectedColor.name}
                         style={{
                             maxWidth: '90%',
                             maxHeight: '90%',

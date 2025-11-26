@@ -63,7 +63,7 @@ const Confirmation = () => {
                 </div>
             </div>
 
-            <Link to="/" className="btn-accent" style={{ textDecoration: 'none', padding: '1rem 2.5rem', borderRadius: '30px' }}>
+            <Link to="/" className="btn-accent" style={{ textDecoration: 'none', padding: '1rem 2.5rem', borderRadius: '30px' }} title="Retourner à la boutique">
                 Retourner à la boutique
             </Link>
         </div>

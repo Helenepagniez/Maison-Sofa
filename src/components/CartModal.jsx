@@ -53,7 +53,7 @@ const CartModal = ({ isOpen, onClose, cartItems, onRemove, onUpdateQuantity, onU
                             {cartItems.map((item, index) => (
                                 <div key={`${item.id}-${item.selectedColor?.id}-${index}`} style={{ display: 'flex', gap: '1rem', borderBottom: '1px solid #eee', paddingBottom: '1.5rem' }}>
                                     <div style={{ width: '100px', height: '100px', backgroundColor: '#f9f9f9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                        <img src={item.image} alt={item.name} style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }} />
+                                        <img src={item.image} alt={item.name} title={item.name} style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }} />
                                     </div>
                                     <div style={{ flex: 1 }}>
                                         <h3 style={{ fontSize: '1rem', margin: '0 0 0.5rem 0' }}>{item.name}</h3>
