@@ -14,7 +14,7 @@ const About = () => {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', marginBottom: '6rem' }} className="about-grid">
                 <div>
                     <img
-                        src={BASE_URL + 'chesterfield.png'}
+                        src={`${BASE_URL}chesterfield.png`}
                         alt="Atelier Maison Sofa"
                         title="Atelier Maison Sofa"
                         style={{ width: '100%', borderRadius: '8px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', filter: 'sepia(0.3)' }}

@@ -35,7 +35,7 @@ const Cart = ({ cartItems, onRemove, onUpdateQuantity, onUpdateColor, products }
                         <div key={`${item.id}-${item.selectedColor?.id}-${index}`} style={{ display: 'grid', gridTemplateColumns: '80px 2fr 1fr 1fr auto', gap: '2rem', padding: '1.5rem 0', borderBottom: '1px solid #eee', alignItems: 'center' }}>
                             {/* Image */}
                             <div style={{ width: '80px', height: '80px', backgroundColor: '#f9f9f9', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px' }}>
-                                <img src={item.image} alt={item.name} title={item.name} style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }} />
+                                <img src={item.selectedColor?.image} alt={item.name} title={item.name} style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }} />
                             </div>
 
                             {/* Description */}
