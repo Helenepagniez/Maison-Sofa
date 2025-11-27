@@ -114,23 +114,49 @@ const App = () => {
   };
 
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        <Navbar cartCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)} onOpenCart={() => setIsCartOpen(true)} />
+        <Navbar
+          cartCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+          onOpenCart={() => setIsCartOpen(true)}
+        />
+
         <main style={{ flex: 1 }}>
           <PageHeader />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<ProductConfigurator onAddToCart={addToCart} />} />
-            <Route path="/checkout" element={<Checkout cartItems={cartItems} total={cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)} onClearCart={clearCart} />} />
+            <Route
+              path="/checkout"
+              element={
+                <Checkout
+                  cartItems={cartItems}
+                  total={cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)}
+                  onClearCart={clearCart}
+                />
+              }
+            />
             <Route path="/confirmation" element={<Confirmation />} />
             <Route path="/legal" element={<Legal />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/cart" element={<Cart cartItems={cartItems} onRemove={removeFromCart} onUpdateQuantity={updateQuantity} onUpdateColor={updateColor} products={products} />} />
+            <Route
+              path="/cart"
+              element={
+                <Cart
+                  cartItems={cartItems}
+                  onRemove={removeFromCart}
+                  onUpdateQuantity={updateQuantity}
+                  onUpdateColor={updateColor}
+                  products={products}
+                />
+              }
+            />
           </Routes>
         </main>
+
         <Footer />
+
         <CartModal
           isOpen={isCartOpen}
           onClose={() => setIsCartOpen(false)}
