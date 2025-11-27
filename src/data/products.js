@@ -1,4 +1,6 @@
-const productsData = [
+const BASE_URL = import.meta.env.BASE_URL;
+
+export const productsData = [
     // Modèle 1 - Chesterfield
     {
         id: 'model-1',
@@ -6,12 +8,12 @@ const productsData = [
         price: 2450,
         description: 'L\'icône du style anglais, avec son capitonnage profond et ses accoudoirs enroulés.',
         category: 'Classique',
-        baseImage: '/chesterfield.png',
+        baseImage: `${BASE_URL}chesterfield.png`,
         colors: [
-            { id: 'col-1-0', name: 'Cuir Cognac', hex: '#8b4513', image: '/chesterfield.png', price: 2450 },
-            { id: 'col-1-1', name: 'Cuir Noir', hex: '#222222', image: '/chesterfield.png', price: 2450 },
-            { id: 'col-1-2', name: 'Velours Vert Anglais', hex: '#004225', image: '/chesterfield.png', price: 2550 },
-            { id: 'col-1-3', name: 'Cuir Marron', hex: '#654321', image: '/chesterfield.png', price: 2450 }
+            { id: 'col-1-0', name: 'Cuir Cognac', hex: '#8b4513', image: `${BASE_URL}chesterfield.png`, price: 2450 },
+            { id: 'col-1-1', name: 'Cuir Noir', hex: '#222222', image: `${BASE_URL}chesterfield.png`, price: 2450 },
+            { id: 'col-1-2', name: 'Velours Vert Anglais', hex: '#004225', image: `${BASE_URL}chesterfield.png`, price: 2550 },
+            { id: 'col-1-3', name: 'Cuir Marron', hex: '#654321', image: `${BASE_URL}chesterfield.png`, price: 2450 }
         ],
         features: ['Capitonnage Fait Main', 'Cuir Pleine Fleur', 'Pieds Tournés'],
         dimensions: { width: 220, height: 78, depth: 95, seatHeight: 45 },
@@ -35,11 +37,11 @@ const productsData = [
         price: 1590,
         description: 'L\'essence du minimalisme : des lignes droites et une élégance discrète.',
         category: 'Minimaliste',
-        baseImage: '/minimalist.png',
+        baseImage: `${BASE_URL}minimalist.png`,
         colors: [
-            { id: 'col-2-0', name: 'Gris Galet', hex: '#d3d3d3', image: '/minimalist.png', price: 1590 },
-            { id: 'col-2-1', name: 'Beige Sable', hex: '#f5f5dc', image: '/minimalist.png', price: 1590 },
-            { id: 'col-2-2', name: 'Anthracite', hex: '#36454f', image: '/minimalist.png', price: 1590 }
+            { id: 'col-2-0', name: 'Gris Galet', hex: '#d3d3d3', image: `${BASE_URL}minimalist.png`, price: 1590 },
+            { id: 'col-2-1', name: 'Beige Sable', hex: '#f5f5dc', image: `${BASE_URL}minimalist.png`, price: 1590 },
+            { id: 'col-2-2', name: 'Anthracite', hex: '#36454f', image: `${BASE_URL}minimalist.png`, price: 1590 }
         ],
         features: ['Design Épuré', 'Déhoussable', 'Pieds Fins Métal'],
         dimensions: { width: 210, height: 80, depth: 90, seatHeight: 43 },
@@ -63,12 +65,12 @@ const productsData = [
         price: 1890,
         description: 'Un design organique aux courbes douces pour un confort enveloppant.',
         category: 'Moderne',
-        baseImage: '/blue.png',
+        baseImage: `${BASE_URL}blue.png`,
         colors: [
-            { id: 'col-3-0', name: 'Blanc Écume', hex: '#f0f0f0', image: '/blue.png', price: 1890 },
-            { id: 'col-3-1', name: 'Bleu Céleste', hex: '#a8c0ff', image: '/blue.png', price: 1890 },
-            { id: 'col-3-2', name: 'Rose Poudré', hex: '#fad0c4', image: '/blue.png', price: 1890 },
-            { id: 'col-3-3', name: 'Gris Perle', hex: '#e5e5e5', image: '/blue.png', price: 1890 }
+            { id: 'col-3-0', name: 'Blanc Écume', hex: '#f0f0f0', image: `${BASE_URL}blue.png`, price: 1890 },
+            { id: 'col-3-1', name: 'Bleu Céleste', hex: '#a8c0ff', image: `${BASE_URL}blue.png`, price: 1890 },
+            { id: 'col-3-2', name: 'Rose Poudré', hex: '#fad0c4', image: `${BASE_URL}blue.png`, price: 1890 },
+            { id: 'col-3-3', name: 'Gris Perle', hex: '#e5e5e5', image: `${BASE_URL}blue.png`, price: 1890 }
         ],
         features: ['Formes Organiques', 'Tissu Bouclé', 'Assise Profonde'],
         dimensions: { width: 240, height: 85, depth: 110, seatHeight: 42 },
@@ -92,12 +94,12 @@ const productsData = [
         price: 2890,
         description: 'Un canapé d\'angle modulable et convertible en lit, parfait pour les grands espaces.',
         category: 'Moderne',
-        baseImage: '/corner-sofa.png',
+        baseImage: `${BASE_URL}corner-sofa.png`,
         colors: [
-            { id: 'col-4-0', name: 'Beige Naturel', hex: '#e8d5c4', image: '/corner-sofa.png', price: 2890 },
-            { id: 'col-4-1', name: 'Gris Clair', hex: '#d3d3d3', image: '/corner-sofa.png', price: 2890 },
-            { id: 'col-4-2', name: 'Bleu Nuit', hex: '#2c3e50', image: '/corner-sofa.png', price: 2990 },
-            { id: 'col-4-3', name: 'Taupe', hex: '#8b7d6b', image: '/corner-sofa.png', price: 2890 }
+            { id: 'col-4-0', name: 'Beige Naturel', hex: '#e8d5c4', image: `${BASE_URL}corner-sofa.png`, price: 2890 },
+            { id: 'col-4-1', name: 'Gris Clair', hex: '#d3d3d3', image: `${BASE_URL}corner-sofa.png`, price: 2890 },
+            { id: 'col-4-2', name: 'Bleu Nuit', hex: '#2c3e50', image: `${BASE_URL}corner-sofa.png`, price: 2990 },
+            { id: 'col-4-3', name: 'Taupe', hex: '#8b7d6b', image: `${BASE_URL}corner-sofa.png`, price: 2890 }
         ],
         features: ['Convertible en Lit', 'Angle Réversible', 'Coffre de Rangement'],
         dimensions: { width: 280, height: 85, depth: 180, seatHeight: 44 },
@@ -121,12 +123,12 @@ const productsData = [
         price: 2190,
         description: 'Des formes arrondies et enveloppantes pour un confort absolu et un style contemporain.',
         category: 'Moderne',
-        baseImage: '/cloud-sofa.png',
+        baseImage: `${BASE_URL}cloud-sofa.png`,
         colors: [
-            { id: 'col-5-0', name: 'Beige Crème', hex: '#f5f5dc', image: '/cloud-sofa.png', price: 2190 },
-            { id: 'col-5-1', name: 'Blanc Ivoire', hex: '#fffff0', image: '/cloud-sofa.png', price: 2190 },
-            { id: 'col-5-2', name: 'Gris Perle', hex: '#e5e5e5', image: '/cloud-sofa.png', price: 2190 },
-            { id: 'col-5-3', name: 'Taupe Clair', hex: '#b8a99a', image: '/cloud-sofa.png', price: 2190 }
+            { id: 'col-5-0', name: 'Beige Crème', hex: '#f5f5dc', image: `${BASE_URL}cloud-sofa.png`, price: 2190 },
+            { id: 'col-5-1', name: 'Blanc Ivoire', hex: '#fffff0', image: `${BASE_URL}cloud-sofa.png`, price: 2190 },
+            { id: 'col-5-2', name: 'Gris Perle', hex: '#e5e5e5', image: `${BASE_URL}cloud-sofa.png`, price: 2190 },
+            { id: 'col-5-3', name: 'Taupe Clair', hex: '#b8a99a', image: `${BASE_URL}cloud-sofa.png`, price: 2190 }
         ],
         features: ['Formes Arrondies', 'Tissu Bouclé Premium', 'Confort Moelleux'],
         dimensions: { width: 230, height: 82, depth: 105, seatHeight: 40 },
@@ -150,12 +152,12 @@ const productsData = [
         price: 3290,
         description: 'Un canapé en cuir véritable au design contemporain, alliant élégance et durabilité.',
         category: 'Classique',
-        baseImage: '/leather.png',
+        baseImage: `${BASE_URL}leather.png`,
         colors: [
-            { id: 'col-6-0', name: 'Cuir Caramel', hex: '#c19a6b', image: '/leather.png', price: 3290 },
-            { id: 'col-6-1', name: 'Cuir Noir', hex: '#1a1a1a', image: '/leather.png', price: 3290 },
-            { id: 'col-6-2', name: 'Cuir Cognac', hex: '#8b4513', image: '/leather.png', price: 3390 },
-            { id: 'col-6-3', name: 'Cuir Gris Anthracite', hex: '#4a4a4a', image: '/leather.png', price: 3290 }
+            { id: 'col-6-0', name: 'Cuir Caramel', hex: '#c19a6b', image: `${BASE_URL}leather.png`, price: 3290 },
+            { id: 'col-6-1', name: 'Cuir Noir', hex: '#1a1a1a', image: `${BASE_URL}leather.png`, price: 3290 },
+            { id: 'col-6-2', name: 'Cuir Cognac', hex: '#8b4513', image: `${BASE_URL}leather.png`, price: 3390 },
+            { id: 'col-6-3', name: 'Cuir Gris Anthracite', hex: '#4a4a4a', image: `${BASE_URL}leather.png`, price: 3290 }
         ],
         features: ['Cuir Pleine Fleur', 'Coutures Sellier', 'Pieds Métal Brossé'],
         dimensions: { width: 215, height: 83, depth: 92, seatHeight: 46 },
@@ -179,12 +181,12 @@ const productsData = [
         price: 890,
         description: 'Un fauteuil 1 place aux formes arrondies et enveloppantes, parfait pour créer un coin lecture.',
         category: 'Moderne',
-        baseImage: '/armchair-rounded.png',
+        baseImage: `${BASE_URL}armchair-rounded.png`,
         colors: [
-            { id: 'col-7-0', name: 'Beige Bouclé', hex: '#f5f5dc', image: '/armchair-rounded.png', price: 890 },
-            { id: 'col-7-1', name: 'Blanc Crème', hex: '#fffdd0', image: '/armchair-rounded.png', price: 890 },
-            { id: 'col-7-2', name: 'Gris Perle', hex: '#e5e5e5', image: '/armchair-rounded.png', price: 890 },
-            { id: 'col-7-3', name: 'Rose Poudré', hex: '#fad0c4', image: '/armchair-rounded.png', price: 890 }
+            { id: 'col-7-0', name: 'Beige Bouclé', hex: '#f5f5dc', image: `${BASE_URL}armchair-rounded.png`, price: 890 },
+            { id: 'col-7-1', name: 'Blanc Crème', hex: '#fffdd0', image: `${BASE_URL}armchair-rounded.png`, price: 890 },
+            { id: 'col-7-2', name: 'Gris Perle', hex: '#e5e5e5', image: `${BASE_URL}armchair-rounded.png`, price: 890 },
+            { id: 'col-7-3', name: 'Rose Poudré', hex: '#fad0c4', image: `${BASE_URL}armchair-rounded.png`, price: 890 }
         ],
         features: ['Formes Arrondies', 'Tissu Bouclé Tendance', 'Compact'],
         dimensions: { width: 85, height: 78, depth: 82, seatHeight: 42 },
@@ -208,12 +210,12 @@ const productsData = [
         price: 2390,
         description: 'Un canapé au design contemporain avec capitonnage vertical, pour une touche audacieuse.',
         category: 'Moderne',
-        baseImage: '/channeled-sofa.png',
+        baseImage: `${BASE_URL}channeled-sofa.png`,
         colors: [
-            { id: 'col-8-0', name: 'Moutarde', hex: '#d4a017', image: '/channeled-sofa.png', price: 2390 },
-            { id: 'col-8-1', name: 'Vert Sauge', hex: '#9caf88', image: '/channeled-sofa.png', price: 2390 },
-            { id: 'col-8-2', name: 'Bleu Canard', hex: '#008b8b', image: '/channeled-sofa.png', price: 2490 },
-            { id: 'col-8-3', name: 'Terracotta', hex: '#e2725b', image: '/channeled-sofa.png', price: 2390 }
+            { id: 'col-8-0', name: 'Moutarde', hex: '#d4a017', image: `${BASE_URL}channeled-sofa.png`, price: 2390 },
+            { id: 'col-8-1', name: 'Vert Sauge', hex: '#9caf88', image: `${BASE_URL}channeled-sofa.png`, price: 2390 },
+            { id: 'col-8-2', name: 'Bleu Canard', hex: '#008b8b', image: `${BASE_URL}channeled-sofa.png`, price: 2490 },
+            { id: 'col-8-3', name: 'Terracotta', hex: '#e2725b', image: `${BASE_URL}channeled-sofa.png`, price: 2390 }
         ],
         features: ['Capitonnage Vertical', 'Velours Premium', 'Design Bas'],
         dimensions: { width: 225, height: 75, depth: 95, seatHeight: 40 },
@@ -237,12 +239,12 @@ const productsData = [
         price: 2690,
         description: 'Un canapé gigogne pratique avec lit d\'appoint extractible, en velours vert émeraude.',
         category: 'Moderne',
-        baseImage: '/trundle-sofa.png',
+        baseImage: `${BASE_URL}trundle-sofa.png`,
         colors: [
-            { id: 'col-9-0', name: 'Vert Émeraude', hex: '#50c878', image: '/trundle-sofa.png', price: 2690 },
-            { id: 'col-9-1', name: 'Bleu Marine', hex: '#000080', image: '/trundle-sofa.png', price: 2690 },
-            { id: 'col-9-2', name: 'Bordeaux', hex: '#800020', image: '/trundle-sofa.png', price: 2790 },
-            { id: 'col-9-3', name: 'Gris Anthracite', hex: '#36454f', image: '/trundle-sofa.png', price: 2690 }
+            { id: 'col-9-0', name: 'Vert Émeraude', hex: '#50c878', image: `${BASE_URL}trundle-sofa.png`, price: 2690 },
+            { id: 'col-9-1', name: 'Bleu Marine', hex: '#000080', image: `${BASE_URL}trundle-sofa.png`, price: 2690 },
+            { id: 'col-9-2', name: 'Bordeaux', hex: '#800020', image: `${BASE_URL}trundle-sofa.png`, price: 2790 },
+            { id: 'col-9-3', name: 'Gris Anthracite', hex: '#36454f', image: `${BASE_URL}trundle-sofa.png`, price: 2690 }
         ],
         features: ['Lit Gigogne Extractible', 'Velours Luxueux', 'Gain de Place'],
         dimensions: { width: 200, height: 82, depth: 90, seatHeight: 43 },
